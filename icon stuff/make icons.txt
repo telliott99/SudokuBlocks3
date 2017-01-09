@@ -1,0 +1,26 @@
+I am trying to recall how I made the icons for my Sudoku app.
+
+I started by making a prototype:  sudoku.png.  I did it by modifying the code so that it would only draw a square if it was filled.  Then I loaded a puzzle that looked nice and took a screenshot.
+
+To get the different sizes I remember using a Swift script.  I think I used images.swift, so I am working through how to bring that up to Swift 3.  For the 2x images, I just used the next size, which I don't think is correct, but it worked.
+
+Then I tried
+iconutil -c icns Sudoku.iconset
+
+and as the old notes say
+dragging it into the project assets in AppIcon didn't work
+I dragged the files individually, and that did work.
+
+It's tricking to bring up the right "area" to drop the files in.  Select xcassets in the Project folder, then the Icons thingie in the middle.
+
+Drag the individual files onto the palette.
+Build and run.  Works.
+
+
+To get a copy of the app.  Run and then do 
+Show in Finder on the .app in the Project navigator.
+
+It is a debug build.
+Have to find out how to build for release.
+
+http://stackoverflow.com/questions/28059697/how-do-i-toggle-between-debug-and-release-builds-in-xcode-6-7-8
