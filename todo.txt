@@ -1,0 +1,6 @@
+re-solve the icons problem
+have a .icns file
+
+Load as puzzle, text window gets ?
+
+evil level on pop-up

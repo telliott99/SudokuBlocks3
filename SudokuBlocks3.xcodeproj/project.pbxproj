@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7504E62B1E2168E10086D361 /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7504E62A1E2168E10086D361 /* MyView.swift */; };
+		75092A141E21657F00A303FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092A131E21657F00A303FC /* AppDelegate.swift */; };
+		75092A161E21657F00A303FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75092A151E21657F00A303FC /* Assets.xcassets */; };
+		75092A191E21657F00A303FC /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75092A171E21657F00A303FC /* MainMenu.xib */; };
+		75092A221E2167C200A303FC /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75092A201E2167C200A303FC /* MainWindowController.swift */; };
+		75092A231E2167C200A303FC /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75092A211E2167C200A303FC /* MainWindowController.xib */; };
+		75433F6D1E2184A600A75A4A /* Mutators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F6C1E2184A600A75A4A /* Mutators.swift */; };
+		75433F6F1E21859900A75A4A /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F6E1E21859900A75A4A /* Alerts.swift */; };
+		75433F711E2186EB00A75A4A /* Undo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F701E2186EB00A75A4A /* Undo.swift */; };
+		75433F771E21890B00A75A4A /* Breakpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F721E21890B00A75A4A /* Breakpoints.swift */; };
+		75433F781E21890B00A75A4A /* Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F731E21890B00A75A4A /* Files.swift */; };
+		75433F791E21890B00A75A4A /* HintDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F741E21890B00A75A4A /* HintDefs.swift */; };
+		75433F7A1E21890B00A75A4A /* HintDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F751E21890B00A75A4A /* HintDetector.swift */; };
+		75433F7B1E21890B00A75A4A /* HintHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75433F761E21890B00A75A4A /* HintHelper.swift */; };
+		755BEEA31E219C0800941E31 /* TextWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BEEA11E219C0800941E31 /* TextWindowController.swift */; };
+		755BEEA41E219C0800941E31 /* TextWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 755BEEA21E219C0800941E31 /* TextWindowController.xib */; };
+		75745F251E2170AE0042E548 /* Plotter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75745F231E2170AE0042E548 /* Plotter.swift */; };
+		75745F261E2170AE0042E548 /* PlotUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75745F241E2170AE0042E548 /* PlotUtilities.swift */; };
+		75B2051C1E2175540080BFAE /* StringToPuzzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2051B1E2175540080BFAE /* StringToPuzzle.swift */; };
+		75B2051E1E21756B0080BFAE /* PuzzleDef.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2051D1E21756B0080BFAE /* PuzzleDef.swift */; };
+		75B205201E21759A0080BFAE /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2051F1E21759A0080BFAE /* DatabaseHelper.swift */; };
+		75B205221E2175EC0080BFAE /* EnumTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B205211E2175EC0080BFAE /* EnumTypes.swift */; };
+		75B205241E2176560080BFAE /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B205231E2176560080BFAE /* Data.swift */; };
+		75B205261E21767F0080BFAE /* db.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75B205251E21767F0080BFAE /* db.plist */; };
+		75B205281E2176B50080BFAE /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B205271E2176B50080BFAE /* Keys.swift */; };
+		75B2052A1E2179BC0080BFAE /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B205291E2179BC0080BFAE /* Extensions.swift */; };
+		75B2052C1E217C030080BFAE /* ScreenUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2052B1E217C030080BFAE /* ScreenUtilities.swift */; };
+		75B2052E1E217CAE0080BFAE /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2052D1E217CAE0080BFAE /* Groups.swift */; };
+		75B205301E217EC10080BFAE /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2052F1E217EC10080BFAE /* Colors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7504E62A1E2168E10086D361 /* MyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		75092A101E21657F00A303FC /* SudokuBlocks3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SudokuBlocks3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		75092A131E21657F00A303FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		75092A151E21657F00A303FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = SudokuBlocks3/Assets.xcassets; sourceTree = "<group>"; };
+		75092A181E21657F00A303FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		75092A1A1E21657F00A303FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75092A201E2167C200A303FC /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		75092A211E2167C200A303FC /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		75433F6C1E2184A600A75A4A /* Mutators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mutators.swift; sourceTree = "<group>"; };
+		75433F6E1E21859900A75A4A /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		75433F701E2186EB00A75A4A /* Undo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Undo.swift; sourceTree = "<group>"; };
+		75433F721E21890B00A75A4A /* Breakpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Breakpoints.swift; sourceTree = "<group>"; };
+		75433F731E21890B00A75A4A /* Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Files.swift; sourceTree = "<group>"; };
+		75433F741E21890B00A75A4A /* HintDefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintDefs.swift; sourceTree = "<group>"; };
+		75433F751E21890B00A75A4A /* HintDetector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintDetector.swift; sourceTree = "<group>"; };
+		75433F761E21890B00A75A4A /* HintHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintHelper.swift; sourceTree = "<group>"; };
+		755BEEA11E219C0800941E31 /* TextWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextWindowController.swift; sourceTree = "<group>"; };
+		755BEEA21E219C0800941E31 /* TextWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextWindowController.xib; sourceTree = "<group>"; };
+		75745F231E2170AE0042E548 /* Plotter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plotter.swift; sourceTree = "<group>"; };
+		75745F241E2170AE0042E548 /* PlotUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlotUtilities.swift; sourceTree = "<group>"; };
+		75B2051B1E2175540080BFAE /* StringToPuzzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringToPuzzle.swift; sourceTree = "<group>"; };
+		75B2051D1E21756B0080BFAE /* PuzzleDef.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleDef.swift; sourceTree = "<group>"; };
+		75B2051F1E21759A0080BFAE /* DatabaseHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		75B205211E2175EC0080BFAE /* EnumTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumTypes.swift; sourceTree = "<group>"; };
+		75B205231E2176560080BFAE /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		75B205251E21767F0080BFAE /* db.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = db.plist; sourceTree = "<group>"; };
+		75B205271E2176B50080BFAE /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		75B205291E2179BC0080BFAE /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		75B2052B1E217C030080BFAE /* ScreenUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScreenUtilities.swift; sourceTree = "<group>"; };
+		75B2052D1E217CAE0080BFAE /* Groups.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
+		75B2052F1E217EC10080BFAE /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		75092A0D1E21657F00A303FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		75092A071E21657F00A303FC = {
+			isa = PBXGroup;
+			children = (
+				75092A121E21657F00A303FC /* SudokuBlocks3 */,
+				75092A151E21657F00A303FC /* Assets.xcassets */,
+				75092A111E21657F00A303FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		75092A111E21657F00A303FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				75092A101E21657F00A303FC /* SudokuBlocks3.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75092A121E21657F00A303FC /* SudokuBlocks3 */ = {
+			isa = PBXGroup;
+			children = (
+				75433F6E1E21859900A75A4A /* Alerts.swift */,
+				75092A131E21657F00A303FC /* AppDelegate.swift */,
+				75433F721E21890B00A75A4A /* Breakpoints.swift */,
+				75B2052F1E217EC10080BFAE /* Colors.swift */,
+				75B205231E2176560080BFAE /* Data.swift */,
+				75B2051F1E21759A0080BFAE /* DatabaseHelper.swift */,
+				75B205211E2175EC0080BFAE /* EnumTypes.swift */,
+				75B205291E2179BC0080BFAE /* Extensions.swift */,
+				75433F731E21890B00A75A4A /* Files.swift */,
+				75B2052D1E217CAE0080BFAE /* Groups.swift */,
+				75433F741E21890B00A75A4A /* HintDefs.swift */,
+				75433F751E21890B00A75A4A /* HintDetector.swift */,
+				75433F761E21890B00A75A4A /* HintHelper.swift */,
+				75B205271E2176B50080BFAE /* Keys.swift */,
+				75092A201E2167C200A303FC /* MainWindowController.swift */,
+				75433F6C1E2184A600A75A4A /* Mutators.swift */,
+				7504E62A1E2168E10086D361 /* MyView.swift */,
+				75745F231E2170AE0042E548 /* Plotter.swift */,
+				75745F241E2170AE0042E548 /* PlotUtilities.swift */,
+				75B2051D1E21756B0080BFAE /* PuzzleDef.swift */,
+				75B2052B1E217C030080BFAE /* ScreenUtilities.swift */,
+				75B2051B1E2175540080BFAE /* StringToPuzzle.swift */,
+				755BEEA11E219C0800941E31 /* TextWindowController.swift */,
+				75433F701E2186EB00A75A4A /* Undo.swift */,
+				75092A171E21657F00A303FC /* MainMenu.xib */,
+				75092A211E2167C200A303FC /* MainWindowController.xib */,
+				755BEEA21E219C0800941E31 /* TextWindowController.xib */,
+				75092A1A1E21657F00A303FC /* Info.plist */,
+				75B205251E21767F0080BFAE /* db.plist */,
+			);
+			path = SudokuBlocks3;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		75092A0F1E21657F00A303FC /* SudokuBlocks3 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75092A1D1E21657F00A303FC /* Build configuration list for PBXNativeTarget "SudokuBlocks3" */;
+			buildPhases = (
+				75092A0C1E21657F00A303FC /* Sources */,
+				75092A0D1E21657F00A303FC /* Frameworks */,
+				75092A0E1E21657F00A303FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SudokuBlocks3;
+			productName = SudokuBlocks3;
+			productReference = 75092A101E21657F00A303FC /* SudokuBlocks3.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		75092A081E21657F00A303FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Tom Elliott";
+				TargetAttributes = {
+					75092A0F1E21657F00A303FC = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 75092A0B1E21657F00A303FC /* Build configuration list for PBXProject "SudokuBlocks3" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 75092A071E21657F00A303FC;
+			productRefGroup = 75092A111E21657F00A303FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				75092A0F1E21657F00A303FC /* SudokuBlocks3 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		75092A0E1E21657F00A303FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				755BEEA41E219C0800941E31 /* TextWindowController.xib in Resources */,
+				75B205261E21767F0080BFAE /* db.plist in Resources */,
+				75092A161E21657F00A303FC /* Assets.xcassets in Resources */,
+				75092A231E2167C200A303FC /* MainWindowController.xib in Resources */,
+				75092A191E21657F00A303FC /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		75092A0C1E21657F00A303FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75433F7A1E21890B00A75A4A /* HintDetector.swift in Sources */,
+				75B2052C1E217C030080BFAE /* ScreenUtilities.swift in Sources */,
+				75433F771E21890B00A75A4A /* Breakpoints.swift in Sources */,
+				75B205301E217EC10080BFAE /* Colors.swift in Sources */,
+				75B205221E2175EC0080BFAE /* EnumTypes.swift in Sources */,
+				75433F711E2186EB00A75A4A /* Undo.swift in Sources */,
+				75B205241E2176560080BFAE /* Data.swift in Sources */,
+				75433F791E21890B00A75A4A /* HintDefs.swift in Sources */,
+				7504E62B1E2168E10086D361 /* MyView.swift in Sources */,
+				75B2051C1E2175540080BFAE /* StringToPuzzle.swift in Sources */,
+				75B205281E2176B50080BFAE /* Keys.swift in Sources */,
+				75745F261E2170AE0042E548 /* PlotUtilities.swift in Sources */,
+				75433F6D1E2184A600A75A4A /* Mutators.swift in Sources */,
+				75092A221E2167C200A303FC /* MainWindowController.swift in Sources */,
+				75433F6F1E21859900A75A4A /* Alerts.swift in Sources */,
+				75B2052A1E2179BC0080BFAE /* Extensions.swift in Sources */,
+				75B205201E21759A0080BFAE /* DatabaseHelper.swift in Sources */,
+				75745F251E2170AE0042E548 /* Plotter.swift in Sources */,
+				75B2051E1E21756B0080BFAE /* PuzzleDef.swift in Sources */,
+				75433F7B1E21890B00A75A4A /* HintHelper.swift in Sources */,
+				75433F781E21890B00A75A4A /* Files.swift in Sources */,
+				75092A141E21657F00A303FC /* AppDelegate.swift in Sources */,
+				755BEEA31E219C0800941E31 /* TextWindowController.swift in Sources */,
+				75B2052E1E217CAE0080BFAE /* Groups.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		75092A171E21657F00A303FC /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				75092A181E21657F00A303FC /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		75092A1B1E21657F00A303FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		75092A1C1E21657F00A303FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		75092A1E1E21657F00A303FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SudokuBlocks3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = te.SudokuBlocks3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		75092A1F1E21657F00A303FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = SudokuBlocks3/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = te.SudokuBlocks3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		75092A0B1E21657F00A303FC /* Build configuration list for PBXProject "SudokuBlocks3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75092A1B1E21657F00A303FC /* Debug */,
+				75092A1C1E21657F00A303FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		75092A1D1E21657F00A303FC /* Build configuration list for PBXNativeTarget "SudokuBlocks3" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75092A1E1E21657F00A303FC /* Debug */,
+				75092A1F1E21657F00A303FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 75092A081E21657F00A303FC /* Project object */;
+}

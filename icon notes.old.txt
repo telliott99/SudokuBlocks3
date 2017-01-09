@@ -1,0 +1,46 @@
+standard screen resolution
+72 dpi or ppi (pixels per inch)
+
+Apple's Retina Displays have
+220 Macbook Pro 3rd gen, to
+401 iPhone 6 Plus
+
+All of the different displays use
+icons at different sizes (esp iOS)
+
+https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/Designing.html
+
+Also, on OS X there are
+Desktop app icon
+toolbar icon
+document icon
+Launchpad
+App store
+
+All icons are square, the sizes needed are:
+1024 x 1024
+512x512 @2x (canvas size 1024 x 1024)
+512 x 512
+256 x 256 @2x
+256 x 256
+128 x 128 @2x
+128 x 128
+32 x 32 @2x
+32 x 32
+16 x 16 @2x
+16 x 16
+
+Naming:  iconfiles should be named like
+icon_512x512.png
+icon_512x512@.png
+
+Put them in a folder:  Sudoku.iconset
+
+iconutil can do the conversion to an icns file
+iconutil -c icns Sudoku.iconset
+
+However, dragging it into the project assets in AppIcon didn't work
+I dragged the files individually, and that did work.
+
+
+
