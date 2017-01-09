@@ -2,7 +2,7 @@ SudokuBlocks.app from one year ago will not run on macOS Sierra.  Aggravating, b
 
 This was a bit of a challenge.  The biggest thing is that automatic code migration didn't work well, and also Xcode was complaining about some project settings, which I had no idea how to make right.  
 
-So I made a brand new project, set up new xib files, and then added the old files swift to it.  I did this in two phases, where in the first one there was just enough of the code to load a puzzle and draw it on the screen.
+So I made a brand new project, set up new xib files, and then added the old swift files to it.  I did this in two phases, where in the first one there was just enough of the code to load a puzzle and draw it on the screen.
 
 I tried to build it and then fixed the errors one by one.  I probably had 50 errors in phase 1 and 100 in phase 2.  Xcode was really good at telling me what was wrong and sometimes making the fix as simple as a double-click.
 
