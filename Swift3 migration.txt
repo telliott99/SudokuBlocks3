@@ -1,0 +1,240 @@
+old: 
+joinWithSeparator("\n")
+
+new:
+joined(separator: "\n")
+
+How many places do we have this?
+
+> cd /Users/telliott_admin/Dropbox/Programming/Swift/Swift-Apps/SudokuBlocks/SudokuBlocks
+
+> grep -e "joinWithSeparator(" -rn .
+./Alerts.swift:38:    let s = sL.joinWithSeparator("\n")
+./Alerts.swift:54:    let s = sL.joinWithSeparator("\n")
+./Extensions.swift:47:        return ret.joinWithSeparator(sep)
+./Extensions.swift:66:        return a.map{String($0)}.joinWithSeparator("")
+./MainWindowController.swift:169:            let s = group.joinWithSeparator(" ")
+./PuzzleDef.swift:52:        return arr.joinWithSeparator("")
+./PuzzleDef.swift:76:        return ret.joinWithSeparator("")
+./PuzzleDef.swift:89:        return ret.joinWithSeparator("")
+>
+
+#-----------------------------------------------------------------------------
+old:
+sorted()
+
+new:
+sort()
+
+also:
+sortInPlace
+
+How many places do we have this?
+
+> grep -e "sort(" -rn .
+./Data.swift:16:a = Array(s).sort()
+./Groups.swift:27:            return Array(sub).sort()
+./Groups.swift:82:    a = Array(Set(a)).sort()
+./HintDefs.swift:42:            let sortedISet = Array(iSet).sort()
+./HintDetector.swift:87:                            affectedGroup: group.sort(),
+./HintDetector.swift:106:                                affectedGroup: group.sort(),
+./HintDetector.swift:164:                        affectedGroup: group.sort(),
+./HintDetector.swift:241:                        affectedGroup: group.sort(),
+./Keys.swift:9:// actually, .sort() gives the 
+./Plotter.swift:46:    for n in Array(data).sort() {
+./Plotter.swift:73:    let xList = rectList.map() { $0.origin.x }.sort()
+./Plotter.swift:77:    let yList = rectList.map() { $0.origin.y }.sort()
+./PuzzleDef.swift:43:        for key in self.dataD.keys.sort() {
+> grep -e "sortInPlace(" -rn .
+./Data.swift:18:Array(s).sortInPlace()
+./HintHelper.swift:25:    hintList.sortInPlace( { $0 < $1 } )
+>
+
+#-----------------------------------------------------------------------------
+
+old:
+var r = Range(start:i, end:j)
+s[i.advancedBy(3)..<j.advancedBy(-1)]
+
+new:
+let i = s.startIndex(offsetBy: 3)
+let j = s.endIndex(offsetBy: -1)
+let r = s.index(i..<j)
+let sub = s.substring(with: r)
+
+> grep -e "Range" -rn .
+./ScreenUtilities.swift:22:        let range = NSRange(0..<0)
+./ScreenUtilities.swift:23:        textEditor.selectedRange = range
+> grep -e "advancedBy" -rn .
+./Data.swift:48:        let v = sc[index.advancedBy(i)]
+./Extensions.swift:36:            let i = current.startIndex.advancedBy(n)
+> grep -e "substring" -rn .
+./Extensions.swift:37:            let front = current.substringToIndex(i)
+./Extensions.swift:39:            current = current.substringFromIndex(i)
+> 
+
+
+#-----------------------------------------------------------------------------
+
+old:
+func myFunc(label: Type)
+new:
+func myFunc(_ label: Type)
+
+since I often call functions without named first argument
+
+> grep -e "func" -rn . | wc
+     103     595    9866
+>
+
+but we want to exclude "func()"
+
+> grep -e "func" -rn . | grep -v "()" | wc
+      61     409    6390
+> 
+
+#-----------------------------------------------------------------------------
+
+old:
+NSAlertStyle.WarningAlertStyle
+NSAlertStyle.InformationalAlertStyle
+
+new:
+NSAlertStyle.warning
+NSAlertStyle.informational
+
+> grep -e "Warning" -rn .
+./Alerts.swift:5:case WarningAlertStyle
+./Alerts.swift:11:func runAlert(s: String, style: NSAlertStyle = .WarningAlertStyle) -> Bool {
+>
+
+#-----------------------------------------------------------------------------
+
+old:
+let blue = NSColor.blueColor()
+new:
+let blue = NSColor.blue
+
+> grep -e "NSColor." -rn .
+./Breakpoints.swift:61:    init (k: String, c: NSColor, l: String,
+./Colors.swift:8:func colorForHintType(t: HintType) -> NSColor {
+./Colors.swift:19:extension NSColor {
+./Colors.swift:38:let banana = NSColor(netHex: 0xFFFF66)
+./Colors.swift:39:let black = NSColor.blackColor()
+./Colors.swift:40:let blue = NSColor.blueColor()
+./Colors.swift:41:let cantaloupe = NSColor(netHex: 0xFFCC66)
+./Colors.swift:42:let clover = NSColor(netHex: 0x008000)
+./Colors.swift:43:let cyan = NSColor.cyanColor()
+./Colors.swift:44:let eggplant = NSColor(netHex: 0x400080)
+./Colors.swift:45:let gray = NSColor.darkGrayColor()
+./Colors.swift:46:let green = NSColor.greenColor()
+./Colors.swift:47:let lavender = NSColor(netHex: 0xCC66FF)
+./Colors.swift:48:let lightSalmon = NSColor(netHex: 0xFFB080)
+./Colors.swift:49:let lime = NSColor(netHex: 0x80FF00)
+./Colors.swift:50:let magenta = NSColor.magentaColor()
+./Colors.swift:51:let maroon = NSColor(netHex: 0x800040)
+./Colors.swift:52:let mercury = NSColor(netHex: 0xE6E6E6)
+./Colors.swift:53:let plum = NSColor(netHex: 0x800080)
+./Colors.swift:54:let purple = NSColor.purpleColor()
+./Colors.swift:55:let red = NSColor.redColor()
+./Colors.swift:56:let salmon = NSColor(netHex: 0xFF6666)
+./Colors.swift:57:let silver = NSColor(netHex: 0xCCCCCC)
+./Colors.swift:58:let steel = NSColor(netHex: 0x666666)
+./Colors.swift:59:let tangerine = NSColor(netHex: 0xFF8000)
+./Colors.swift:60:let teal = NSColor(netHex: 0x008080)
+./Colors.swift:61:let turquoise = NSColor(netHex: 0x00FFFF)
+./Colors.swift:64:func constructColorList() -> [NSColor] {
+./MyView.swift:6:        let backgroundColor = NSColor.whiteColor()
+./Plotter.swift:10:    NSColor.blueColor().set()
+> 
+
+#-----------------------------------------------------------------------------
+
+NSApplication.sharedApplication()
+Application.shared()
+
+NSBundle.mainBundle().pathForResource(
+Bundle.main.path(forResource:
+
+applicationDidFinishLaunching(aNotification:
+applicationDidFinishLaunching(_ aNotification:
+
+let d = NSHomeDirectory().stringByAppendingString("/Desktop/")
+let d = NSHomeDirectory() + "/Desktop/"
+
+sp.beginWithCompletionHandler{
+sp.begin{
+
+NSURL
+URL
+
+op.URL
+op.url
+
+NSUTF8StringEncoding
+ String.Encoding.utf8
+
+s = try String(contentsOfURL:op.URL!, encoding: NSUTF8StringEncoding)
+s = try String(contentsOf:op.url!, encoding: String.Encoding.utf8)
+
+s = try String(contentsOfURL:op.URL!, encoding: NSUTF8StringEncoding)
+s = try String(contentsOf:op.url!, encoding: String.Encoding.utf8)
+
+.reverse()
+.reversed()
+
+.enumerate()
+.enumerated()
+
+flipped
+isFlipped
+
+objectForKey(
+object(key: 
+
+a.appendContentsOf(
+a.append(contentsOf:
+
+override func mouseDown(theEvent: NSEvent) {mouseDown(event: NSEvent) {
+override func mouseDown(with theEvent: NSEvent) {
+
+NSBezierPath.strokeRect
+NSBezierPath.stroke
+
+NSBezierPath.fillRect
+NSBezierPath.fill
+
+addButtonWithTitle(
+addButton(withTitle:
+
+let p = self.convertPoint(q, fromView:self.superview)
+let p = self.convert(q, from:self.superview)
+
+if repeatedIntSet.isSubsetOf(set) {
+    let iSet = set.subtract(
+if repeatedIntSet.isSubset(of: set) {
+    let iSet = set.subtracting(
+
+set.intersect
+set.intersection
+
+isSubsetOf
+isSubset(of:
+
+.sortInPlace( {
+.sort( by: {
+
+indexOf(c) { popUp.selectItemAtIndex(Int(i))
+index(of: c) { popUp.selectItem(at: Int(i))
+
+String(currentPuzzle)
+String(describing: currentPuzzle)
+
+w.makeKeyWindow()
+w.makeKey()
+
+---
+
+Result of call to <func> is unused.
+_ = <func>()
+
