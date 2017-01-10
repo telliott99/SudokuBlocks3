@@ -40,14 +40,14 @@ class MainWindowController: NSWindowController {
     @IBAction func requestClean(sender: AnyObject) {
         applyConstraintsForFilledSquaresOnce()
         hideHints(sender: self)
-        self.window!.display()
+        refreshScreen()
     }
     
     
     @IBAction func requestExhaustiveClean(sender: AnyObject) {
         applyConstraintsForFilledSquaresExhaustively()
         hideHints(sender: self)
-        self.window!.display()
+        // self.window!.display()
     }
     
     @IBAction func getRandomPuzzle(sender: AnyObject) {
@@ -76,7 +76,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func undo(sender: AnyObject) {
         undoLastMove()
-        refreshScreen()
+        myView.refreshScreen()
     }
     
     @IBAction func setNewBreakpoint(sender: AnyObject) {
@@ -101,7 +101,8 @@ class MainWindowController: NSWindowController {
     
     @IBAction func showHints(sender: AnyObject) {
         setHintActive(true)
-        self.window!.display()
+        // self.window!.display()
+        myView.refreshScreen()
     }
     
     @IBAction func hideHints(sender: AnyObject) {
@@ -109,13 +110,15 @@ class MainWindowController: NSWindowController {
         label1.stringValue = emptyString
         label2.stringValue = emptyString
         label3.stringValue = emptyString
-        self.window!.display()
+        // self.window!.display()
+        myView.refreshScreen()
     }
     
     // OK b/c different signature than the @IBAction
     // can't call that one from Swift files  why??
     func hideHints() {
         hideHints(sender: self)
+        myView.refreshScreen()
     }
     
     @IBAction func showHelp(sender: AnyObject) {

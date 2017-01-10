@@ -11,26 +11,8 @@ import Cocoa
 let ad = NSApplication.shared().delegate as! AppDelegate
 
 func refreshScreen() {
-    // not sure why, but this one is required
-    // despite the def in Mutators
-    
-    Swift.print("ScreenUtilities:  refreshScreen")
-    
-    // let ad = NSApplication.shared().delegate as! AppDelegate
-    
-    // this no longer triggers the View to draw
-    // leaving it in for now
-    // fixed by going through mwc -> MyView with an outlet
-    
-    /*
-    if let mwc = ad.mainWindowController {
-        if let w = mwc.window {
-            Swift.print("\(w) display")
-            w.display()
-        }
-        
-    }
-    */
+    // Swift.print("ScreenUtilities:  refreshScreen")
+
     if let mwc = ad.mainWindowController {
         mwc.myView.refreshScreen()
     }

@@ -12,7 +12,7 @@ class MyView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         // super.draw(dirtyRect)
-        Swift.print("MyView:  draw")
+        // Swift.print("MyView:  draw")
 
         let backgroundColor = NSColor.white
         backgroundColor.set()
@@ -23,7 +23,7 @@ class MyView: NSView {
     }
     
     func refreshScreen() {
-        Swift.print("MyView:  refreshScreen")
+        // Swift.print("MyView:  refreshScreen")
         self.needsDisplay = true
     }
     
@@ -60,7 +60,7 @@ class MyView: NSView {
     @IBAction override func keyDown(with event: NSEvent) {
         
         super.keyDown(with: event)
-        Swift.print(event.keyCode)
+        // Swift.print(event.keyCode)
         
         if event.keyCode == 6 && commandKeyWasPressed(with: event) {
             undoLastMove()
@@ -127,6 +127,6 @@ class MyView: NSView {
     }
     
     func talktome() {
-        Swift.print("here")
+        // Swift.print("here")
     }
 }

@@ -13,6 +13,7 @@ func findRepeatedTwos(neighbors: [String]) -> [KeyArray]? {
     // filter for 2 elements
     let twos = arr.filter( { $0.count == 2 } )
     
+    // repeatsTwice contains IntSets that occur twice
     var repeatsTwice = [IntSet]()
     for set in Set(twos) {
         if arr.elementCount(input: set) == 2 {
@@ -20,24 +21,11 @@ func findRepeatedTwos(neighbors: [String]) -> [KeyArray]? {
         }
     }
     
-    // repeatsTwice contains IntSets that occur twice
     var results = [KeyArray]()
     
     // now we need the corresponding keys, we return *both* keys
     for set in repeatsTwice {
-        /*
-        var t = [String]()
-        for key in neighbors {
-            if set == dataD[key] {
-                t.append(key)
-            }
-        }
-        */
-        
-        // rewrite more idiomatically
         let t = neighbors.filter( { set == currentPuzzle.dataD[$0] } )
-        
-        // results.append(KeyPair(first:t[0], second:t[1]))
         results.append(t)
     }
     if results.count == 0 {
@@ -58,61 +46,64 @@ so the last one cannot be {1}
 
 */
 
+// return a set of Hint objects if we find any
 func getTypeOneHints() -> [Hint]? {
-    // return a set of Hint objects if we find any
-    var hints = [Hint]()
+    var ret = [Hint]()
     let dataD = currentPuzzle.dataD
+    
     for (group,kind) in getAllGroups() {
         if let results = findRepeatedTwos(neighbors: group) {
-            
-            for keyArray in results {
+            for keysForRepeatedTwos in results {
+                let first = keysForRepeatedTwos[0]
+                let repeatedIntSet = dataD[first]!
                 
-                let repeatedIntSet = dataD[keyArray[0]]!
-                
+                // test each square in the groups
                 for key in group {
-                    if keyArray.contains(key) {
+                    // skip the ones with repeated twos
+                    if keysForRepeatedTwos.contains(key) {
                          continue
                     }
+                    // we will use set operations on the data
+                    let st = Set(dataD[key]!)
                     
-                    let set = Set(dataD[key]!)
-                    
-                    // if both values are present
-                    if repeatedIntSet.isSubset(of: set) {
+                    // test if both repeated values are present
+                    if repeatedIntSet.isSubset(of: st) {
                         
-                        //let iSet = set.subtract(repeatedIntSet)
-                        var iSet = set
+                        // we re-use st, so make a copy
+                        var iSet = st
                         iSet.subtract(repeatedIntSet)
                         
+                        // and construct the hint
                         let h = Hint(
                             key: key,
                             iSet: iSet,
-                            keyArray: keyArray,
+                            keyArray: keysForRepeatedTwos,
                             hintType: .one,
-                            affectedGroup: group.sorted(),
+                            affectedGroup: group,
                             kind: kind )
                         
-                        hints.append(h)
+                        ret.append(h)
                     }
                     
                     // if only one of the two values is present
                     // n is an Int
                     
                     for n in repeatedIntSet {
-                        if set.contains(n) {
-                            let intersection = set.intersection(repeatedIntSet)
+                        if st.contains(n) {
+                            let intersection = st.intersection(repeatedIntSet)
                             
-                            var iSet = set
+                            var iSet = st
                             iSet.subtract(intersection)
                             
                             let h = Hint(
                                 key: key,
                                 iSet: iSet,
-                                keyArray: keyArray,
+                                keyArray: keysForRepeatedTwos,
                                 hintType: .one,
-                                affectedGroup: group.sorted(),
+                                affectedGroup: group,
                                 kind: kind)
                             
-                            hints.append(h)
+                            ret.append(h)
                          }
                     }
                 }
@@ -120,25 +111,25 @@ func getTypeOneHints() -> [Hint]? {
             }
         }
     }
-    if hints.count == 0 {
+    if ret.count == 0 {
         return nil
     }
-    return Array(Set(hints))
+    return Array(Set(ret))
 }
 
 /*
 Type Two situation
-we have one value that is
-the only one of its type 
+we have one value that is the only one of its type
 for a box row or col
 */
 
+// return a set of Hint objects if we find any
 func getTypeTwoHints() -> [Hint]? {
-    // return a set of Hint objects if we find any
-    var hints = [Hint]()
+    var ret = [Hint]()
     let dataD = currentPuzzle.dataD
     
     for (group,kind) in getAllGroups() {
+        
         // gather all the values
         var arr = [Int]()
         for key in group {
@@ -147,7 +138,7 @@ func getTypeTwoHints() -> [Hint]? {
         
         // get the singletons
         var setsWithOne = [Int]()
-        for value in Set(arr) {
+        for value in [1,2,3,4,5,6,7,8,9] {
             if arr.elementCount(input: value) == 1 {
                 setsWithOne.append(value)
             }
@@ -170,12 +161,12 @@ func getTypeTwoHints() -> [Hint]? {
                         affectedGroup: group.sorted(),
                         kind: kind)
                     
-                    hints.append(h)
+                    ret.append(h)
                 }
             }
         }
     }
-    return Array(Set(hints))
+    return Array(Set(ret))
 }
 
 
@@ -188,7 +179,7 @@ so any other occurrence of 1, 2, or 3 deserves a hint
 
 func getTypeThreeHints() -> [Hint]? {
     // return an array of Hint objects if we find any
-    var hints = [Hint]()
+    var ret = [Hint]()
     let dataD = currentPuzzle.dataD
     for (group,kind) in getAllGroups() {
         
@@ -247,13 +238,13 @@ func getTypeThreeHints() -> [Hint]? {
                         affectedGroup: group.sorted(),
                         kind: kind )
                     
-                    hints.append(h)
+                    ret.append(h)
 
                 }
             }
         }
     }
-    return Array(Set(hints))
+    return Array(Set(ret))
 }
 
 

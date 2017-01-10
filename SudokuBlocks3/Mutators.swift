@@ -142,7 +142,7 @@ func applyConstraintsForFilledSquaresExhaustively() {
 }
 
 func resetPuzzle() {
-    Swift.print("reset")
+    // Swift.print("reset")
     currentPuzzle.dataD = currentPuzzle.start
     applyConstraintsForFilledSquaresOnce()
     refreshScreen()

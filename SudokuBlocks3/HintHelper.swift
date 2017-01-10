@@ -22,11 +22,7 @@ func calculateHintsForThisPosition() -> Bool {
     
     hintList = removeDuplicateHints(hintList: hintList)
     
-    // needed?
-    // hintList.sorted( by: { $0 < $1 } )
-    
-    // for h in hintList { Swift.print(h) }
-    
+    hintList = hintList.sorted( by: { $0 < $1 } )
     return hintList.count > 0
 }
 

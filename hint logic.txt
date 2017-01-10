@@ -1,0 +1,117 @@
+Important definitions:
+
+Data.swift:
+typealias IntSet = Set<Int>
+typealias DataSet = [String:IntSet]
+
+HintDefs.swift:
+typealias KeyArray = [String]
+
+EnumTypes.swift:
+enum GroupType {
+    case row
+    case col
+    case zone
+}
+
+enum HintType {
+    case one
+    case two
+    case three
+}
+
+#----------------------------
+
+We construct a hint as
+struct Hint: CustomStringConvertible, Hashable, Equatable {
+    let key: String			// square that should change
+    let iSet: IntSet                    // new value for that square
+    let keyArray: [String]              // type 1:  keys for repeats
+    let hintType: HintType
+    let affectedGroup: [String]         // affected 9-member group
+    let kind: GroupType
+    
+
+The key is the square we suggest to be changed in the hint.
+The iSet is the set of integers for this key
+            after subtracting the repeated integers
+(it's redundant here)
+
+The keyArray contains the keys for the repeated integers (only)
+affectedGroup: the 9-member group that contains both key and keyArray
+(this is to draw a dashed line around it)
+it's redundant with the GroupType
+
+#----------------------------
+
+Type 1 hint
+
+situations:
+neighbors:  [ {1,2}, .. {1,2}, .. {1,2,3} ]
+neighbors:  [ {1,2}, .. {1,2}, .. {1,3} ]
+
+Current approach:  
+Find the repeated twos, then find the ones also have same 
+
+A group is a row, col or zone 
+[Key] or KeyArray which is really [String]
+
+example of a KeyArray:  ["A1","B1","C1" ... "I1"]
+
+#----------------------------
+
+Groups.swift
+func getAllGroups() -> [ ([String], GroupType) ] {
+
+getAllGroups() returns an array of tuples of (KeyArray, groupType)
+
+example of a groupType:  GroupType.row
+
+For each of these groups call:
+
+HintDetector.swift
+findRepeatedTwos(neighbors: [String]) -> [KeyArray]?
+returns a KeyArray (optional)
+
+Then call:
+
+getIntSetsForKeyArray(group: [String]) -> [IntSet]
+where IntSet is just Set<Int>
+
+This [IntSet] is filtered for $0.count == 2
+
+So now we have something like
+[[1,2],[1,2],[3,5]]
+
+Then, we check each set in the array to see if it appears exactly twice
+arr.elementCount(input: st) == 2 {
+
+Get the corresponding keys for each set in this array by
+neighbors.filter( { set == currentPuzzle.dataD[$0] } )
+
+and return
+
+#----------------------------
+
+for each group, kind
+
+we returned from findRepeatedTwos
+what we have is simply an optional [KeyArray]
+
+if results is not empty, each KeyArray
+contains at least two keys with only the same two repeated ints (or four, etc)
+
+for each keyArray, get the data for the first key
+repeatedIntSet
+
+for each key in the group
+if the keyArray contains the key, continue
+
+do a set operation
+
+if a set of the data for the key has repeatedIntSet as a subset
+then we construct a hint from the
+
+
+
+

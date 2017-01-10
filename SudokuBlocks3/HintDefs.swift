@@ -46,15 +46,17 @@ struct Hint: CustomStringConvertible, Hashable, Equatable {
         }
     }
     
-    // forgotten why I needed this
+    // for sorting hints?
     var hashValue: Int {
         get {
+            var n = 0
             let ka = orderedKeys
-            var n = ka.index(of: key)! * 10
+            n += ka.index(of: key)!
+            
             switch hintType {
-            case .one:  n = 1
-            case .two:  n += 2
-            case .three:  n += 3
+            case .one:  n += 10000
+            case .two:  n += 1000
+            case .three:  n += 100
             }
             return n
        }

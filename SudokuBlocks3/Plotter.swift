@@ -15,7 +15,7 @@ func drawDividers() {
 }
 
 func retrieveAndPlotData() {
-    Swift.print("retrieveAndPlotData")
+    // Swift.print("retrieveAndPlotData")
     let dataD = currentPuzzle.dataD
     for key in orderedKeys {
         // any Dictionary access returns an Optional
