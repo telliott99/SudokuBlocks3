@@ -14,6 +14,9 @@ func calculateHintsForThisPosition() -> Bool {
     if let hints = getTypeThreeHints() {
         hintList += hints
     }
+    if let hints = getTypeFourHints() {
+        hintList += hints
+    }
     if hintList.count == 0 {
         _ = runAlert("no hints right now")
         setHintActive(false)
@@ -37,20 +40,22 @@ func setHintActive(_ flag: Bool) {
     }
 }
 
-func getHintCount() -> (Int,Int,Int) {
+func getHintCount() -> (Int,Int,Int,Int) {
     var m = 0
     var n = 0
     var o = 0
+    var p = 0
     
     for hint in hintList {
         switch  hint.hintType {
-        case .one:  m += 1
-        case .two:  n += 1
+        case .one:   m += 1
+        case .two:   n += 1
         case .three: o += 1
+        case .four:  p += 1
         }
     }
-    // Swift.print("hints: \(m) \(n) \(o)")
-    return (m,n,o)
+    // Swift.print("hints: \(m) \(n) \(o) \(p)")
+    return (m,n,o,p)
 }
 
 func removeDuplicateHints(hintList: [Hint]) -> [Hint] {
@@ -74,12 +79,13 @@ func displayHints() {
     
     if hintActive {
         outlineHintSquares()
-        let (c1,c2,c3) = getHintCount()
+        let (c1,c2,c3,c4) = getHintCount()
         
         if wc != nil {
             wc!.label1.stringValue = String(c1)
             wc!.label2.stringValue = String(c2)
             wc!.label3.stringValue = String(c3)
+            wc!.label4.stringValue = String(c4)
        }
     }
         
@@ -88,6 +94,7 @@ func displayHints() {
             wc!.label1.stringValue = String("")
             wc!.label2.stringValue = String("")
             wc!.label3.stringValue = String("")
+            wc!.label4.stringValue = String("")
         }
     }
 }

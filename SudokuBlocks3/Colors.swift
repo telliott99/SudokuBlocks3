@@ -8,9 +8,10 @@ let cL = constructColorList()
 
 func colorForHintType(t: HintType) -> NSColor {
     switch  t {
-    case .one:  return blue
-    case .two: return red
+    case .one:   return blue
+    case .two:   return red
     case .three: return magenta
+    case .four:  return black
     }
 }
 

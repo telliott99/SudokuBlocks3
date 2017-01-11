@@ -18,6 +18,7 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var label1: NSTextField!
     @IBOutlet weak var label2: NSTextField!
     @IBOutlet weak var label3: NSTextField!
+    @IBOutlet weak var label4: NSTextField!
     
     @IBOutlet weak var myView: MyView!
     
@@ -30,6 +31,7 @@ class MainWindowController: NSWindowController {
         label1.textColor = colorForHintType(t: .one)
         label2.textColor = colorForHintType(t: .two)
         label3.textColor = colorForHintType(t: .three)
+        label4.textColor = colorForHintType(t: .four)
         popUp.addItem(withTitle: "evil")
     }
     
@@ -110,6 +112,7 @@ class MainWindowController: NSWindowController {
         label1.stringValue = emptyString
         label2.stringValue = emptyString
         label3.stringValue = emptyString
+        label4.stringValue = emptyString
         // self.window!.display()
         myView.refreshScreen()
     }

@@ -54,9 +54,10 @@ struct Hint: CustomStringConvertible, Hashable, Equatable {
             n += ka.index(of: key)!
             
             switch hintType {
-            case .one:  n += 10000
-            case .two:  n += 1000
-            case .three:  n += 100
+            case .one:    n += 100000
+            case .two:    n += 10000
+            case .three:  n += 1000
+            case .four:   n += 100
             }
             return n
        }

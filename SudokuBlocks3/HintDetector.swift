@@ -55,7 +55,7 @@ func getTypeOneHints() -> [Hint]? {
         if let results = findRepeatedTwos(neighbors: group) {
             for keysForRepeatedTwos in results {
                 let first = keysForRepeatedTwos[0]
-                let repeatedIntSet = dataD[first]!
+                let repeatedIntSet = Set(dataD[first]!)
                 
                 // test each square in the groups
                 for key in group {
@@ -253,4 +253,105 @@ Type Four situation
 we have 3 instances of 3 of a kind
 */
 
+// this code doesn't work to find such instances now
 
+func findRepeatedThrees(neighbors: [String]) -> [KeyArray]? {
+    let arr = currentPuzzle.getIntSetsForKeyArray(group: neighbors)
+    
+    // filter for 3 elements
+    let threes = arr.filter( { $0.count == 3 } )
+    
+    // repeatsThrice contains IntSets that occur 3x
+    var repeatsThrice = [IntSet]()
+    for set in Set(threes) {
+        if arr.elementCount(input: set) == 3 {
+            repeatsThrice.append(set)
+        }
+    }
+    
+    var results = [KeyArray]()
+    
+    // now we need the corresponding keys, we return *both* keys
+    for set in repeatsThrice {
+        let t = neighbors.filter( { set == currentPuzzle.dataD[$0] } )
+        results.append(t)
+    }
+    if results.count == 0 {
+        return nil
+    }
+    return results
+}
+
+
+func getTypeFourHints() -> [Hint]? {
+
+    // return an array of Hint objects if we find any
+    var ret = [Hint]()
+    
+    let dataD = currentPuzzle.dataD
+    for (group,kind) in getAllGroups() {
+        if let results = findRepeatedThrees(neighbors: group) {
+            Swift.print("type four: \(results)")
+            for keysForRepeatedThrees in results {
+                let first = keysForRepeatedThrees[0]
+                let repeatedIntSet = Set(dataD[first]!)
+                
+                // test each square in the groups
+                for key in group {
+                    // skip the ones with repeated threes
+                    if keysForRepeatedThrees.contains(key) {
+                        continue
+                    }
+                    // we will use set operations on the data
+                    let st = Set(dataD[key]!)
+                    
+                    // test if all 3 repeated values are present
+                    if repeatedIntSet.isSubset(of: st) {
+                        
+                        // we re-use st, so make a copy
+                        var iSet = st
+                        iSet.subtract(repeatedIntSet)
+                        
+                        // and construct the hint
+                        let h = Hint(
+                            key: key,
+                            iSet: iSet,
+                            keyArray: keysForRepeatedThrees,
+                            hintType: .four,
+                            affectedGroup: group,
+                            kind: kind )
+                        
+                        ret.append(h)
+                    }
+                    
+                    // if only one of the three values is present
+                    // n is an Int
+                    
+                    for n in repeatedIntSet {
+                        if st.contains(n) {
+                            let intersection = st.intersection(repeatedIntSet)
+                            
+                            var iSet = st
+                            iSet.subtract(intersection)
+                            
+                            let h = Hint(
+                                key: key,
+                                iSet: iSet,
+                                keyArray: keysForRepeatedThrees,
+                                hintType: .four,
+                                affectedGroup: group,
+                                kind: kind)
+                            
+                            ret.append(h)
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+    if ret.count == 0 {
+        return nil
+    }
+    return Array(Set(ret))
+}

@@ -17,6 +17,7 @@ enum HintType {
     case one
     case two
     case three
+    case four
 }
 
 enum GroupType {
