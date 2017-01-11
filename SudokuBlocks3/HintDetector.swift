@@ -16,7 +16,7 @@ func findRepeatedTwos(neighbors: [String]) -> [KeyArray]? {
     // repeatsTwice contains IntSets that occur twice
     var repeatsTwice = [IntSet]()
     for set in Set(twos) {
-        if arr.elementCount(input: set) == 2 {
+        if arr.countElements(input: set) == 2 {
             repeatsTwice.append(set)
         }
     }
@@ -57,7 +57,7 @@ func getTypeOneHints() -> [Hint]? {
                 let first = keysForRepeatedTwos[0]
                 let repeatedIntSet = Set(dataD[first]!)
                 
-                // test each square in the groups
+                // test each square in each group
                 for key in group {
                     // skip the ones with repeated twos
                     if keysForRepeatedTwos.contains(key) {
@@ -139,7 +139,7 @@ func getTypeTwoHints() -> [Hint]? {
         // get the singletons
         var setsWithOne = [Int]()
         for value in [1,2,3,4,5,6,7,8,9] {
-            if arr.elementCount(input: value) == 1 {
+            if arr.countElements(input: value) == 1 {
                 setsWithOne.append(value)
             }
         }
@@ -264,7 +264,7 @@ func findRepeatedThrees(neighbors: [String]) -> [KeyArray]? {
     // repeatsThrice contains IntSets that occur 3x
     var repeatsThrice = [IntSet]()
     for set in Set(threes) {
-        if arr.elementCount(input: set) == 3 {
+        if arr.countElements(input: set) == 3 {
             repeatsThrice.append(set)
         }
     }

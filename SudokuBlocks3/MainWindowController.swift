@@ -194,7 +194,7 @@ class MainWindowController: NSWindowController {
             _ = runAlert("Found a problem: \n\(s)")
         }
         else {
-            _ = runAlert("OK: no problems found", style: .informational)
+            _ = runAlert("No problems found!", style: .informational)
         }
     }
 }

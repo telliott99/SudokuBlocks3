@@ -49,7 +49,8 @@ func showHintHelpAsAlert() {
         "Types:",
         "1:  repeated twos [1,2] .. [1,2]",
         "2:  unique value for group",
-        "3:  a cycle [1,2] .. [2,3] .. [3,1]" ]
+        "3:  a cycle [1,2] .. [2,3] .. [3,1]",
+        "4:  repeated threes [1,2,3] .. " ]
         
     let s = sL.joined(separator: "\n")
     _ = runAlert(s, style: .informational)
