@@ -86,7 +86,7 @@ Gw
 </string>
                         </buttonCell>
                         <connections>
-                            <action selector="dismissController:" target="-2" id="JI8-bI-7tu"/>
+                            <action selector="cancelWithSender:" target="-2" id="yEL-77-ZYy"/>
                         </connections>
                     </button>
                 </subviews>

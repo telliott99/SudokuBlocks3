@@ -3,14 +3,14 @@ import Foundation
 var currentPuzzle = Puzzle(
     title: String(),
     text: String(),
-    start:DataSet(),
-    dataD:DataSet() )
+    start:DataDict(),
+    dataD:DataDict() )
 
 struct Puzzle {
     let title: String
     let text: String
-    let start: DataSet
-    var dataD: DataSet
+    let start: DataDict
+    var dataD: DataDict
     var description: String {
         get {
             return self.stringRepresentation()
@@ -107,7 +107,7 @@ extension Puzzle {
         return result
     }
 
-    func keyForValue(group: [String], value: IntSet, dataD: DataSet) -> String? {
+    func keyForValue(group: [String], value: IntSet, dataD: DataDict) -> String? {
         for key in group {
             if dataD[key]! == value {
                 return key

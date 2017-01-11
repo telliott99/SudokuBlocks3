@@ -14,25 +14,20 @@ s = Set([1,2,3])
 
 When necessary to convert to sorted array:
 a = Array(s).sort()
-or
-Array(s).sortInPlace()
 */
 
-typealias IntSet = Set<Int>
-typealias DataSet = [String:IntSet]
-
-func constructZeroedDataDict() -> DataSet {
+func constructZeroedDataDict() -> DataDict {
     // mostly, we will count starting from 1
     // the cells are [1,2,3,4,5,6,7,8,9] == 1..<10
     
-    var D = DataSet()
+    var D = DataDict()
     for key in orderedKeys {
         D[key] = Set(1..<10)
     }
     return D
 }
 
-func convertStringToDataSet(s: String) -> DataSet? {
+func convertStringToDataSet(s: String) -> DataDict? {
     
     // we must remove spaces (in showing data, we put them there!)
     // newlines too

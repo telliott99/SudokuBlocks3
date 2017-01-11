@@ -8,7 +8,8 @@ a particular IntSet is found in an array
 
 // count the number of elements of any Equatable Type
 extension Array {
-    func countElements<T: Equatable> (input: T) -> Int {
+
+    func elementCountGeneric<T: Equatable> (input: T) -> Int {
         var count = 0
         for el in self {
             if el as! T == input {
@@ -17,8 +18,46 @@ extension Array {
         }
         return count
     }
+ 
+    /*
+    // if this were generic, could not pass in [IntArray]
+    func elementCount (input: IntArray) -> Int {
+        var count = 0
+        for el in self {
+            if (input == el as! IntArray) {
+                count += 1
+            }
+        }
+        return count
+    }
+    */
+    
+    func containsElement <T:Equatable> (input: T) -> Bool {
+        for el in self {
+            if (input == el as! T) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func uniqueValues () ->  [IntArray] {
+        // quick and dirty, couldn't figure out the right way
+        // compute a string for an IntArray and check for that
+        var hashes = [String]()
+        var ret = [IntArray]()
+        for el in self {
+            var v = el as! IntArray
+            v = v.sorted()
+            let s = String(describing:  v)
+            if (!(hashes.contains(s))) {
+                ret.append(v)
+                hashes.append(s)
+            }
+        }
+        return ret
+    }
 }
-
 
 extension String {
     func divideStringIntoChunks(chunkSize n: Int) -> [String] {
