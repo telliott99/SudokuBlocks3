@@ -44,7 +44,7 @@ func getTypeOneHints() -> [Hint]? {
                     var iSet = dataD[key]!
                     
                     // if either of repeated values is present
-                    if (repIntSet.intersection(iSet).count > 0) {
+                    if repIntSet.intersection(iSet).count > 0 {
                     
                         //Swift.print("\(iSet) \(repIntSet)")
                         iSet.subtract(repIntSet)
@@ -65,31 +65,7 @@ func getTypeOneHints() -> [Hint]? {
                         
                         ret.append(h)
                     }
-                    
-                    // if only one of the two values is present
-                    // n is an Int
-                    
-                    /*
-                    for n in repIntSet {
-                        if st.contains(n) {
-                            let intersection = st.intersection(repIntSet)
-                            
-                            var iSet = st
-                            iSet.subtract(intersection)
-                            
-                            let h = Hint(
-                                key: key,
-                                iSet: iSet,
-                                keyArray: keyArray,
-                                hintType: .one,
-                                affectedGroup: group,
-                                kind: kind)
-                            
-                            ret.append(h)
-                         }
-                    }
-                    */
-                }
+               }
                 
             }
         }

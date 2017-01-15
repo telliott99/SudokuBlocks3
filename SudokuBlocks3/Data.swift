@@ -50,11 +50,11 @@ func convertStringToDataSet(s: String) -> DataDict? {
         // we accept "." or "0"
         // the Set<Int> is already good in this case
         
-        if (".0".characters.contains(v)) { continue }
+        if ".0".characters.contains(v) { continue }
         
         // attempt conversion to Int
         let m = Int(String(v))
-        assert ((m != nil),
+        assert (m != nil,
             "int conversion for \(v) at index \(i) failed.")
         
         let n = m!

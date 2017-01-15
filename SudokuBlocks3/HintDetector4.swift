@@ -33,7 +33,7 @@ func getTypeFourHints() -> [Hint]? {
                     var iSet = dataD[key]!
                     
                     // test if any of repeated values is present
-                    if (repIntSet.intersection(iSet).count > 0) {
+                    if repIntSet.intersection(iSet).count > 0 {
                         
                         iSet.subtract(repIntSet)
                         // subtract works even if one of the values is missing
@@ -49,32 +49,7 @@ func getTypeFourHints() -> [Hint]? {
                         
                         ret.append(h)
                     }
-                    
-                    /*
-                    // if only one of the three values is present
-                    // n is an Int
-                    
-                    for n in repeatedIntSet {
-                        if st.contains(n) {
-                            let intersection = st.intersection(repeatedIntSet)
-                            
-                            var iSet = st
-                            iSet.subtract(intersection)
-                            
-                            let h = Hint(
-                                key: key,
-                                iSet: iSet,
-                                keyArray: keysForRepeatedThrees,
-                                hintType: .four,
-                                affectedGroup: group,
-                                kind: kind)
-                            
-                            ret.append(h)
-                        }
-                    }
-                    */
                 }
-                
             }
         }
     }

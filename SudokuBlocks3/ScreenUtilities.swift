@@ -32,7 +32,7 @@ func unSelectTextField(tf: NSTextField, controller: NSWindowController) {
 func commandKeyWasPressed(with event: NSEvent) -> Bool {
     /*
     docs aren't particularly clear
-    by examining theEvent.modifierFlags.rawValue
+    by examining event.modifierFlags.rawValue
     
     CommandKeyMask bit is set in 1048576
     >>> bin(1048576)  # 2**20

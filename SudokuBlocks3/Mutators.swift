@@ -55,7 +55,7 @@ func respondToClick(key: String, point: NSPoint,
         moveL.append( (n, m, [key], nullSet))
     }
     
-    if (!(isLegalMove(key, st: tmp))) {
+    if !(isLegalMove(key, st: tmp)) {
         _ = runAlert("There appears to be a problem with that move.")
         return
     }

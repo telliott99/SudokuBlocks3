@@ -11,8 +11,8 @@ extension Array {
 
     func elementCountGeneric<T: Equatable> (input: T) -> Int {
         var count = 0
-        for el in self {
-            if el as! T == input {
+        for Element in self {
+            if Element as! T == input {
                 count += 1
             }
         }
@@ -33,8 +33,8 @@ extension Array {
     */
     
     func containsElement <T:Equatable> (input: T) -> Bool {
-        for el in self {
-            if (input == el as! T) {
+        for Element in self {
+            if Element as! T == input {
                 return true
             }
         }
@@ -46,11 +46,12 @@ extension Array {
         // compute a string for an IntArray and check for that
         var hashes = [String]()
         var ret = [IntArray]()
-        for el in self {
-            var v = el as! IntArray
+        
+        for Element in self {
+            var v = Element as! IntArray
             v = v.sorted()
             let s = String(describing:  v)
-            if (!(hashes.contains(s))) {
+            if !(hashes.contains(s)) {
                 ret.append(v)
                 hashes.append(s)
             }
